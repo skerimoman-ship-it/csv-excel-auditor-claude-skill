@@ -1,0 +1,8 @@
+Order_ID,Order_Date,Region,Product,Units,Unit_Price,Total_USD
+ORD-1001,2026-10-01,North,Pro Kit,2,$49.00,98.00
+ORD-1002,10/02/2026,South,Team License,1,149.00,149.00
+ORD-1002,10/02/2026,South,Team License,1,149.00,149.00
+ORD-1003,2026-10-04,East,Pro Kit,-1,49.00,-49.00
+ORD-1004,2026-10-05,,Starter Pack,5,29.00,145.00
+ORD-1005,2026-10-06,West,Pro Kit,3,49.00,150.00
+TOTAL,,,,, ,493.00

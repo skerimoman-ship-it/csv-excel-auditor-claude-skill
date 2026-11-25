@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataPilot Skills — Executive Data &amp; Spreadsheet Analyst Pack for Claude</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              600: '#2563EB',
+              700: '#1D4ED8',
+              800: '#1E40AF',
+              900: '#1E3A8A',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
+      <a href="#top" class="flex items-center gap-2.5 text-slate-900">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-700 text-white font-mono text-sm font-semibold">DP</span>
+        <span class="font-bold tracking-tight text-base sm:text-lg">DataPilot Skills</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#demo" class="hover:text-slate-900 transition-colors">Live Audit Demo</a>
+        <a href="#skills" class="hover:text-slate-900 transition-colors">6 Included Skills</a>
+        <a href="#pricing" class="hover:text-slate-900 transition-colors">Pricing</a>
+        <a href="#faq" class="hover:text-slate-900 transition-colors">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <a href="#pricing" class="rounded-lg border border-slate-300 px-3.5 py-2 text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors">Free Skill</a>
+        <button id="navBuyBtn" type="button" class="rounded-lg bg-brand-700 px-3.5 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-brand-800 transition-colors">Get Pro ($39)</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-800 mb-6">
+            <span class="h-2 w-2 rounded-full bg-brand-600"></span>
+            Built for Claude Web, Desktop, Cowork &amp; Claude Code · v1.0
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 leading-[1.08]">
+            Turn Claude into a senior data &amp; spreadsheet analyst in 3 minutes.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl">
+            Six tested, production-ready <span class="mono text-sm bg-slate-100 px-1.5 py-0.5 rounded text-slate-800">SKILL.md</span> workflows for auditing messy CSVs, building 6-slide KPI decks, running Budget-vs-Actual variance checks, reconciling ledgers, and publishing Notion + Google Drive briefs.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3.5">
+            <button id="heroProBtn" type="button" class="rounded-xl bg-brand-700 px-6 py-3.5 text-sm sm:text-base font-semibold text-white shadow-sm hover:bg-brand-800 transition-colors">
+              Get Full 5-Skill Pro Pack — $39
+            </button>
+            <button id="heroFreeBtn" type="button" class="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm sm:text-base font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+              Try Free CSV Auditor Skill ($0)
+            </button>
+          </div>
+        </div>
+
+        <!-- Value metrics strip -->
+        <div class="mt-14 grid grid-cols-1 gap-6 border-t border-slate-200 pt-8 sm:grid-cols-3">
+          <div>
+            <div class="mono text-2xl font-bold text-slate-950">6 SKILL.md Files</div>
+            <p class="mt-1 text-sm text-slate-600">1 free lead-magnet auditor + 5 specialized Pro analyst skills with strict audit guardrails.</p>
+          </div>
+          <div>
+            <div class="mono text-2xl font-bold text-slate-950">MCP Connector Ready</div>
+            <p class="mt-1 text-sm text-slate-600">Works natively with Claude Cowork cloud schedules, Notion, Google Drive, and Gmail drafts.</p>
+          </div>
+          <div>
+            <div class="mono text-2xl font-bold text-slate-950">Zero API Keys Needed</div>
+            <p class="mt-1 text-sm text-slate-600">Plain-text open standard files. Inspect every instruction yourself before uploading.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live Audit Demo -->
+    <section id="demo" class="py-16 sm:py-24 border-b border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div class="max-w-2xl">
+            <p class="mono text-xs font-semibold uppercase tracking-wider text-brand-700">Interactive Skill Preview</p>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-950">See what <span class="mono text-2xl sm:text-3xl text-brand-700">csv-excel-auditor</span> catches in 10 seconds</h2>
+            <p class="mt-3 text-slate-600">Click below to run our included <span class="mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">sample_messy_sales.csv</span> through the exact 6-point audit rubric packaged in the Free Starter Skill.</p>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="demoRawBtn" type="button" class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors">Raw Messy CSV</button>
+            <button id="demoAuditBtn" type="button" class="rounded-lg bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800 transition-colors">Run Skill Audit</button>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/70 overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-5 py-3.5">
+            <div class="flex items-center gap-2.5">
+              <span class="mono text-xs font-semibold text-slate-700">sample_messy_sales.csv</span>
+              <span id="demoStatusBadge" class="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-800">Unchecked Input · 7 rows</span>
+            </div>
+            <div id="demoScoreWrap" class="hidden items-center gap-2">
+              <span class="text-xs font-medium text-slate-500">Data Readiness Score:</span>
+              <span class="mono rounded-md bg-rose-100 px-2.5 py-0.5 text-xs font-bold text-rose-800">45 / 100</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto bg-white">
+            <table class="w-full text-left text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-slate-200 bg-slate-50 mono text-xs text-slate-500">
+                  <th class="px-4 py-3 font-medium">Order_ID</th>
+                  <th class="px-4 py-3 font-medium">Order_Date</th>
+                  <th class="px-4 py-3 font-medium">Region</th>
+                  <th class="px-4 py-3 font-medium">Product</th>
+                  <th class="px-4 py-3 font-medium text-right">Units</th>
+                  <th class="px-4 py-3 font-medium text-right">Unit_Price</th>
+                  <th class="px-4 py-3 font-medium text-right">Total_USD</th>
+                  <th id="auditColHeader" class="hidden px-4 py-3 font-medium text-brand-800">Skill Audit Flag</th>
+                </tr>
+              </thead>
+              <tbody id="demoTableBody" class="divide-y divide-slate-100 mono text-xs sm:text-sm"></tbody>
+            </table>
+          </div>
+
+          <!-- Audit Findings Panel -->
+          <div id="demoAuditPanel" class="hidden border-t border-slate-200 bg-slate-50 p-5">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              <div class="rounded-xl border border-rose-200 bg-white p-3.5">
+                <div class="text-xs font-semibold text-rose-700">2 Critical Errors</div>
+                <div class="mt-1 text-xs text-slate-600">Duplicate key <span class="mono font-semibold">ORD-1002</span> &amp; embedded <span class="mono font-semibold">TOTAL</span> row causing double-counting.</div>
+              </div>
+              <div class="rounded-xl border border-amber-200 bg-white p-3.5">
+                <div class="text-xs font-semibold text-amber-700">3 Format &amp; Math Warnings</div>
+                <div class="mt-1 text-xs text-slate-600">Mixed date format, text currency <span class="mono font-semibold">"$49.00"</span>, and <span class="mono font-semibold">ORD-1005</span> math mismatch ($150 vs $147).</div>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                <div class="text-xs font-semibold text-slate-800">2 Data Integrity Flags</div>
+                <div class="mt-1 text-xs text-slate-600">Negative quantity (<span class="mono font-semibold">-1</span>) on ORD-1003 and blank Region on ORD-1004.</div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500">Guardrail enforced: the skill flags every anomaly and proposes exact cleaning steps without silently deleting or fabricating financial rows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Included Skills Explorer -->
+    <section id="skills" class="py-16 sm:py-24 border-b border-slate-200 bg-slate-50/50">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <p class="mono text-xs font-semibold uppercase tracking-wider text-brand-700">What's Inside v1.0</p>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-950">Six focused skills. Zero bloated prompts.</h2>
+          </div>
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter skills">
+            <button type="button" data-filter="all" class="skill-filter rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white">All 6</button>
+            <button type="button" data-filter="free" class="skill-filter rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">Free Starter</button>
+            <button type="button" data-filter="pro" class="skill-filter rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">Pro Bundle</button>
+            <button type="button" data-filter="mcp" class="skill-filter rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">MCP Connector</button>
+          </div>
+        </div>
+
+        <div id="skillsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-16 sm:py-24 border-b border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-2xl mb-12">
+          <p class="mono text-xs font-semibold uppercase tracking-wider text-brand-700">Simple One-Time Licensing</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-950">Pay once. Deploy across every Claude workspace.</h2>
+          <p class="mt-3 text-slate-600">No recurring subscriptions. Instant ZIP download with full <span class="mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">SKILL.md</span> files, 3-minute installation guide, sample dataset, and commercial license.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 items-stretch">
+          <!-- Free Tier -->
+          <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7">
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-950">Free Starter Skill</h3>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-700">MIT License</span>
+              </div>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-slate-950">$0</span>
+                <span class="text-sm text-slate-500">forever</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-600">Test our workflow quality on your own messy spreadsheets before upgrading.</p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-700">
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span><strong class="mono text-xs">csv-excel-auditor</strong> full SKILL.md</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>6-point automated data quality rubric</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>Messy test CSV dataset included</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>3-minute Claude Web &amp; Code install guide</span></li>
+              </ul>
+            </div>
+            <button type="button" data-plan="free" class="plan-cta mt-8 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+              Download Free Skill
+            </button>
+          </div>
+
+          <!-- Pro Solo Tier -->
+          <div class="flex flex-col justify-between rounded-2xl border-2 border-brand-700 bg-white p-7 shadow-lg shadow-brand-900/5 relative">
+            <span class="absolute -top-3.5 left-7 rounded-full bg-brand-700 px-3 py-1 text-xs font-semibold text-white">Most Popular</span>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-950">Pro Bundle — Solo</h3>
+                <span class="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-800">1 Seat</span>
+              </div>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-slate-950">$39</span>
+                <span class="text-sm text-slate-500">one-time</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-600">For solo analysts, finance leads, and consultants delivering executive-grade reporting.</p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-700">
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span><strong>All 6 SKILL.md files</strong> (Free + 5 Pro skills)</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>KPI Deck, Variance BvA &amp; Multi-Sheet Reconciler</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>Notion + Google Drive MCP Executive Brief skill</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>Client-ready plain-English memo generator</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>Commercial client-project use + v1.x updates</span></li>
+              </ul>
+            </div>
+            <button type="button" data-plan="solo" class="plan-cta mt-8 w-full rounded-xl bg-brand-700 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-800 transition-colors">
+              Buy Solo Pack — $39
+            </button>
+          </div>
+
+          <!-- Team License Tier -->
+          <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7">
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-950">Team License</h3>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-700">Up to 15 Seats</span>
+              </div>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-slate-950">$149</span>
+                <span class="text-sm text-slate-500">one-time</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-600">Standardize spreadsheet audits and weekly KPI digests across your entire analytics or ops team.</p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-700">
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>Everything in the Pro Bundle</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>Company-wide deployment (up to 15 seats)</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>Internal GitHub / Claude Team repo rights</span></li>
+                <li class="flex gap-2.5"><span class="text-brand-600 font-bold">✓</span> <span>4 Claude Cowork scheduled-task prompt templates</span></li>
+              </ul>
+            </div>
+            <button type="button" data-plan="team" class="plan-cta mt-8 w-full rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white hover:bg-slate-800 transition-colors">
+              Buy Team License — $149
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 sm:py-24 bg-slate-50/50">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <p class="mono text-xs font-semibold uppercase tracking-wider text-brand-700">Questions &amp; Answers</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-slate-950 mb-8">Frequently asked questions</h2>
+        <div id="faqList" class="divide-y divide-slate-200 border-y border-slate-200 bg-white rounded-xl overflow-hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10">
+    <div class="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-4 px-4 sm:px-6 text-sm text-slate-500">
+      <div>© 2026 DataPilot Skills · Executive Data &amp; Spreadsheet Analyst Pack v1.0</div>
+      <div class="flex items-center gap-5">
+        <a href="#skills" class="hover:text-slate-900">Skills</a>
+        <a href="#pricing" class="hover:text-slate-900">Pricing</a>
+        <button id="ownerConfigBtn" type="button" class="text-brand-700 font-medium hover:underline">Owner Checkout Link Config</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Skill Detail Modal -->
+  <div id="skillModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/50 p-4 backdrop-blur-sm">
+    <div class="w-full max-w-xl rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+        <div>
+          <span id="modalSkillBadge" class="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-800"></span>
+          <h3 id="modalSkillName" class="mono mt-1.5 text-lg font-bold text-slate-950"></h3>
+        </div>
+        <button id="closeSkillModal" type="button" class="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-900" aria-label="Close modal">✕</button>
+      </div>
+      <div class="p-6 space-y-4 text-sm text-slate-700">
+        <p id="modalSkillDesc" class="text-slate-600"></p>
+        <div>
+          <div class="font-semibold text-slate-950 mb-2">Automated Workflow Steps</div>
+          <ol id="modalSkillSteps" class="list-decimal pl-5 space-y-1.5 text-slate-700"></ol>
+        </div>
+        <div class="rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-600">
+          <strong class="text-slate-900">Built-in Guardrail:</strong> <span id="modalSkillGuardrail"></span>
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-3 border-t border-slate-200 bg-slate-50 px-6 py-3.5">
+        <button id="closeSkillModal2" type="button" class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100">Close</button>
+        <button id="modalGetPackBtn" type="button" class="rounded-lg bg-brand-700 px-4 py-2 text-xs font-semibold text-white hover:bg-brand-800">Get This Skill</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout / Deploy Modal -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/50 p-4 backdrop-blur-sm">
+    <div class="w-full max-w-md rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+        <h3 id="checkoutTitle" class="text-lg font-bold text-slate-950"></h3>
+        <button id="closeCheckoutModal" type="button" class="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100" aria-label="Close modal">✕</button>
+      </div>
+      <div id="checkoutBody" class="p-6 text-sm text-slate-700 space-y-4"></div>
+    </div>
+  </div>
+
+  <!-- Owner Checkout URL Config Modal -->
+  <div id="configModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/50 p-4 backdrop-blur-sm">
+    <div class="w-full max-w-lg rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+        <h3 class="text-base font-bold text-slate-950">Owner Storefront Link Settings</h3>
+        <button id="closeConfigModal" type="button" class="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100" aria-label="Close">✕</button>
+      </div>
+      <form id="configForm" class="p-6 space-y-4 text-sm">
+        <p class="text-xs text-slate-600">Paste your live GitHub repo URL (Free Skill) and Paddle / checkout URLs (Solo &amp; Team) to test your storefront buttons right here, or update the <code>CHECKOUT_URLS</code> object at the top of this file's script before deploying.</p>
+        <div>
+          <label for="cfgFree" class="block text-xs font-semibold text-slate-700 mb-1">Free Skill URL (GitHub repo or direct download)</label>
+          <input id="cfgFree" type="url" placeholder="https://github.com/your-handle/csv-excel-auditor" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs mono focus:border-brand-600 focus:outline-none" />
+        </div>
+        <div>
+          <label for="cfgSolo" class="block text-xs font-semibold text-slate-700 mb-1">Pro Solo ($39) Checkout URL</label>
+          <input id="cfgSolo" type="url" placeholder="https://checkout.paddle.com/..." class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs mono focus:border-brand-600 focus:outline-none" />
+        </div>
+        <div>
+          <label for="cfgTeam" class="block text-xs font-semibold text-slate-700 mb-1">Team License ($149) Checkout URL</label>
+          <input id="cfgTeam" type="url" placeholder="https://checkout.paddle.com/..." class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs mono focus:border-brand-600 focus:outline-none" />
+        </div>
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button type="button" id="cancelConfigBtn" class="rounded-lg border border-slate-300 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">Cancel</button>
+          <button type="submit" class="rounded-lg bg-brand-700 px-4 py-2 text-xs font-semibold text-white hover:bg-brand-800">Save Links</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden rounded-xl bg-slate-900 px-4 py-3 text-xs font-medium text-white shadow-lg"></div>
+
+  <script>
+    // =========================================================================
+    // OWNER DEPLOY CONFIG: Replace these empty strings with your live URLs
+    // before uploading index.html to Cloudflare Pages, Netlify, or GitHub Pages.
+    // =========================================================================
+    const CHECKOUT_URLS = {
+      free: "https://github.com/skerimoman-ship-it/csv-excel-auditor-claude-skill",
+      solo: "https://968086795490.gumroad.com/l/executive-data-skills",
+      team: "https://968086795490.gumroad.com/l/executive-data-skills"
+    };
+
+    try {
+      const saved = JSON.parse(localStorage.getItem('datapilot_urls') || '{}');
+      if (saved.free) CHECKOUT_URLS.free = saved.free;
+      if (saved.solo) CHECKOUT_URLS.solo = saved.solo;
+      if (saved.team) CHECKOUT_URLS.team = saved.team;
+    } catch (e) {}
+
+    // Sample messy sales CSV rows (exact match to 02_SETUP_AND_DOCS/sample_messy_sales.csv)
+    const SAMPLE_ROWS = [
+      { id: 'ORD-1001', date: '2026-10-01', region: 'North', product: 'Pro Kit', units: '2', price: '$49.00', total: '98.00', flag: 'Warning: Text currency "$49.00"', sev: 'warn' },
+      { id: 'ORD-1002', date: '10/02/2026', region: 'South', product: 'Team License', units: '1', price: '149.00', total: '149.00', flag: 'Warning: Mixed date format (MM/DD/YYYY)', sev: 'warn' },
+      { id: 'ORD-1002', date: '10/02/2026', region: 'South', product: 'Team License', units: '1', price: '149.00', total: '149.00', flag: 'Critical: Exact duplicate Order_ID', sev: 'crit' },
+      { id: 'ORD-1003', date: '2026-10-04', region: 'East', product: 'Pro Kit', units: '-1', price: '49.00', total: '-49.00', flag: 'Info: Negative units (-1) — verify refund', sev: 'info' },
+      { id: 'ORD-1004', date: '2026-10-05', region: '(blank)', product: 'Starter Pack', units: '5', price: '29.00', total: '145.00', flag: 'Warning: Missing Region value', sev: 'warn' },
+      { id: 'ORD-1005', date: '2026-10-06', region: 'West', product: 'Pro Kit', units: '3', price: '49.00', total: '150.00', flag: 'Critical: Math mismatch (3 × $49 = $147)', sev: 'crit' },
+      { id: 'TOTAL', date: '', region: '', product: '', units: '', price: '', total: '493.00', flag: 'Critical: Subtotal row mixed in raw data', sev: 'crit' }
+    ];
+
+    const SKILLS = [
+      {
+        id: 'csv-excel-auditor',
+        name: 'csv-excel-auditor',
+        title: 'CSV & Excel Data Auditor',
+        tier: 'Free Starter',
+        tags: ['free'],
+        summary: 'Runs a 6-point data quality audit on any messy spreadsheet and scores readiness from 0–100.',
+        steps: [
+          'Inspects sheet structure, merged headers, and inferred column types.',
+          'Flags nulls (>5%), duplicate keys, mixed dates/currencies, and broken Excel formulas.',
+          'Detects outliers and embedded subtotal rows that cause double-counting.',
+          'Outputs an Audit Summary Table plus safe cleaning commands or a cleaned file.'
+        ],
+        guardrail: 'Never silently drops rows or fabricates missing financial numbers without explicit confirmation.'
+      },
+      {
+        id: 'kpi-executive-deck',
+        name: 'kpi-executive-deck',
+        title: 'Executive KPI Deck Builder',
+        tier: 'Pro Bundle',
+        tags: ['pro'],
+        summary: 'Turns raw monthly or quarterly spreadsheets into a 6-slide board narrative with verified deltas.',
+        steps: [
+          'Extracts top 5–7 KPIs and recomputes MoM, QoQ, or YoY deltas independently.',
+          'Builds a declarative 6-slide narrative (Verdict, Revenue, Margin, Risks, Diagnostics, Decisions).',
+          'Formats every headline as an executive takeaway rather than a generic topic label.'
+        ],
+        guardrail: 'States exact currency, reporting period, and tags every annualized projection as an Estimate.'
+      },
+      {
+        id: 'variance-budget-analyzer',
+        name: 'variance-budget-analyzer',
+        title: 'Variance & Budget-vs-Actual Analyzer',
+        tier: 'Pro Bundle',
+        tags: ['pro'],
+        summary: 'Produces audit-grade Budget vs. Actual variance tables separating price, volume, and timing shifts.',
+        steps: [
+          'Standardizes Favorable (F) and Unfavorable (U) sign conventions across revenue and costs.',
+          'Highlights material variances exceeding both ±5% and top-20% dollar impact.',
+          'Classifies root causes into Timing, Volume, Price/Rate, or One-Time drivers.'
+        ],
+        guardrail: 'Verifies that line-item variances reconcile exactly to bottom-line Net Income / EBITDA variance.'
+      },
+      {
+        id: 'multi-sheet-reconciler',
+        name: 'multi-sheet-reconciler',
+        title: 'Multi-Sheet & Ledger Reconciler',
+        tier: 'Pro Bundle',
+        tags: ['pro'],
+        summary: 'Matches payouts, invoices, CRM exports, or dual spreadsheets into 5 clean exception buckets.',
+        steps: [
+          'Normalizes join keys (whitespace, casing, dates) and sets numeric tolerance ($0.01 default).',
+          'Separates Exact Matches, Amount Mismatches, Only-in-A, Only-in-B, and Duplicate Conflicts.',
+          'Generates a mathematical Reconciliation Proof bridging Source A Total to Source B Total.'
+        ],
+        guardrail: 'Never force-matches ambiguous rows without a shared ID; routes them to Suggested Fuzzy Matches.'
+      },
+      {
+        id: 'notion-drive-brief-writer',
+        name: 'notion-drive-brief-writer',
+        title: 'Notion & Drive Executive Brief Writer',
+        tier: 'Pro · MCP',
+        tags: ['pro', 'mcp'],
+        summary: 'Reads updated Google Drive spreadsheets and publishes a structured weekly KPI brief straight to Notion.',
+        steps: [
+          'Scans the target Google Drive folder for reporting files modified in the last 7 days.',
+          'Synthesizes a 4-block digest (TL;DR Verdict, KPI Scorecard, Wins, Decisions Needed).',
+          'Publishes a dated Notion page and optionally prepares a Gmail draft summary.'
+        ],
+        guardrail: 'Draft-only email policy by default; logs "Source Unavailable" instead of reusing stale numbers.'
+      },
+      {
+        id: 'client-summary-generator',
+        name: 'client-summary-generator',
+        title: 'Client-Ready Data Summary Generator',
+        tier: 'Pro Bundle',
+        tags: ['pro'],
+        summary: 'Translates technical spreadsheets and Python/Excel outputs into plain-English client memos and cover emails.',
+        steps: [
+          'Strips raw statistical jargon while preserving every verified figure.',
+          'Generates a synchronized 1-page client memo and an under-150-word cover email.',
+          'Runs a final number-by-number fidelity check against the source table.'
+        ],
+        guardrail: 'Never overclaims causation from observational correlation.'
+      }
+    ];
+
+    const FAQS = [
+      {
+        q: 'Which Claude plans and apps support these skills?',
+        a: 'Every skill uses the open SKILL.md format and works across Claude.ai (Web & Desktop), Claude Cowork, and Claude Code. The Notion & Drive MCP skill requires connecting Google Drive and Notion under Customize > Connectors.'
+      },
+      {
+        q: 'Do I need an Anthropic API key or coding skills to install them?',
+        a: 'No. Installation takes under 3 minutes: upload the skill folder under Customize > Skills in Claude and toggle it on. Zero API keys, zero Python installs, and zero external servers required.'
+      },
+      {
+        q: 'Can Claude accidentally send emails or delete files with the MCP skill?',
+        a: 'No. Our installation guide configures read/draft tools on Allow and keeps external email sending on "Always ask" so Claude prepares drafts for your review without sending anything live on its own.'
+      },
+      {
+        q: 'What is the difference between Solo ($39) and Team ($149)?',
+        a: 'Solo covers one individual for unlimited personal and client-project analysis. Team grants company-wide deployment for up to 15 seats, internal GitHub repository sharing, plus our 4 cloud Claude Cowork scheduled-task prompt templates.'
+      },
+      {
+        q: 'How is the pack delivered after purchase?',
+        a: 'You receive an instant ZIP download containing all 6 SKILL.md files, the 3-minute Install Guide, Commercial License, Changelog, and the sample_messy_sales.csv test dataset.'
+      }
+    ];
+
+    // Toast helper
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => t.classList.add('hidden'), 3200);
+    }
+
+    // 1. Demo table renderer
+    let isAudited = false;
+    function renderDemo() {
+      const tbody = document.getElementById('demoTableBody');
+      const auditColHeader = document.getElementById('auditColHeader');
+      const auditPanel = document.getElementById('demoAuditPanel');
+      const scoreWrap = document.getElementById('demoScoreWrap');
+      const badge = document.getElementById('demoStatusBadge');
+      const rawBtn = document.getElementById('demoRawBtn');
+      const auditBtn = document.getElementById('demoAuditBtn');
+
+      auditColHeader.classList.toggle('hidden', !isAudited);
+      auditPanel.classList.toggle('hidden', !isAudited);
+      scoreWrap.classList.toggle('hidden', !isAudited);
+      scoreWrap.classList.toggle('flex', isAudited);
+
+      if (isAudited) {
+        badge.textContent = 'Audited · 7 Issues Flagged';
+        badge.className = 'rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-semibold text-rose-800';
+        auditBtn.className = 'rounded-lg bg-brand-700 px-4 py-2 text-sm font-semibold text-white';
+        rawBtn.className = 'rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50';
+      } else {
+        badge.textContent = 'Unchecked Input · 7 rows';
+        badge.className = 'rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-800';
+        rawBtn.className = 'rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white';
+        auditBtn.className = 'rounded-lg bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-800';
+      }
+
+      tbody.innerHTML = SAMPLE_ROWS.map(r => {
+        const rowBg = isAudited
+          ? (r.sev === 'crit' ? 'bg-rose-50/70' : r.sev === 'warn' ? 'bg-amber-50/60' : 'bg-sky-50/50')
+          : 'bg-white';
+        const pillCls = r.sev === 'crit'
+          ? 'bg-rose-100 text-rose-800'
+          : r.sev === 'warn'
+          ? 'bg-amber-100 text-amber-800'
+          : 'bg-sky-100 text-sky-800';
+
+        return `<tr class="${rowBg}">
+          <td class="px-4 py-2.5 font-medium text-slate-900">${r.id}</td>
+          <td class="px-4 py-2.5 text-slate-700">${r.date || '—'}</td>
+          <td class="px-4 py-2.5 ${r.region === '(blank)' ? 'italic text-slate-400' : 'text-slate-700'}">${r.region || '—'}</td>
+          <td class="px-4 py-2.5 text-slate-700">${r.product || '—'}</td>
+          <td class="px-4 py-2.5 text-right text-slate-700">${r.units || '—'}</td>
+          <td class="px-4 py-2.5 text-right text-slate-700">${r.price || '—'}</td>
+          <td class="px-4 py-2.5 text-right font-medium text-slate-900">${r.total}</td>
+          ${isAudited ? `<td class="px-4 py-2.5"><span class="inline-block rounded-md px-2 py-0.5 text-xs font-sans font-semibold ${pillCls}">${r.flag}</span></td>` : ''}
+        </tr>`;
+      }).join('');
+    }
+
+    document.getElementById('demoRawBtn').addEventListener('click', () => { isAudited = false; renderDemo(); });
+    document.getElementById('demoAuditBtn').addEventListener('click', () => { isAudited = true; renderDemo(); });
+
+    // 2. Skills Grid + Filter + Modal
+    let activeFilter = 'all';
+    function renderSkills() {
+      const grid = document.getElementById('skillsGrid');
+      const filtered = activeFilter === 'all' ? SKILLS : SKILLS.filter(s => s.tags.includes(activeFilter));
+      grid.innerHTML = filtered.map(s => {
+        const isFree = s.tags.includes('free');
+        const badgeCls = isFree ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-brand-50 text-brand-800 border-brand-100';
+        return `<article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 hover:border-brand-600/50 transition-colors">
+          <div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="rounded-full border px-2.5 py-0.5 text-xs font-semibold ${badgeCls}">${s.tier}</span>
+              <span class="mono text-xs text-slate-400">SKILL.md</span>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-slate-950">${s.title}</h3>
+            <div class="mono text-xs text-brand-700 mt-0.5">${s.name}</div>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">${s.summary}</p>
+          </div>
+          <button type="button" data-skill-id="${s.id}" class="preview-skill-btn mt-6 inline-flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-semibold text-slate-800 hover:bg-slate-100 transition-colors">
+            <span>Preview workflow &amp; guardrails</span>
+            <span>→</span>
+          </button>
+        </article>`;
+      }).join('');
+
+      grid.querySelectorAll('.preview-skill-btn').forEach(btn => {
+        btn.addEventListener('click', () => openSkillModal(btn.dataset.skillId));
+      });
+    }
+
+    document.querySelectorAll('.skill-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeFilter = btn.dataset.filter;
+        document.querySelectorAll('.skill-filter').forEach(b => {
+          const active = b.dataset.filter === activeFilter;
+          b.className = active
+            ? 'skill-filter rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white'
+            : 'skill-filter rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50';
+        });
+        renderSkills();
+      });
+    });
+
+    const skillModal = document.getElementById('skillModal');
+    let currentModalSkill = null;
+    function openSkillModal(id) {
+      const s = SKILLS.find(x => x.id === id);
+      if (!s) return;
+      currentModalSkill = s;
+      document.getElementById('modalSkillBadge').textContent = s.tier;
+      document.getElementById('modalSkillName').textContent = s.name;
+      document.getElementById('modalSkillDesc').textContent = s.summary;
+      document.getElementById('modalSkillSteps').innerHTML = s.steps.map(st => `<li>${st}</li>`).join('');
+      document.getElementById('modalSkillGuardrail').textContent = s.guardrail;
+      skillModal.classList.remove('hidden');
+      skillModal.classList.add('flex');
+    }
+    function closeSkillModal() {
+      skillModal.classList.add('hidden');
+      skillModal.classList.remove('flex');
+    }
+    document.getElementById('closeSkillModal').addEventListener('click', closeSkillModal);
+    document.getElementById('closeSkillModal2').addEventListener('click', closeSkillModal);
+    document.getElementById('modalGetPackBtn').addEventListener('click', () => {
+      closeSkillModal();
+      openCheckout(currentModalSkill && currentModalSkill.tags.includes('free') ? 'free' : 'solo');
+    });
+
+    // 3. Checkout Modal
+    const checkoutModal = document.getElementById('checkoutModal');
+    function openCheckout(plan) {
+      const meta = {
+        free: { title: 'Download Free Starter Skill ($0)', price: '$0', desc: 'Includes csv-excel-auditor/SKILL.md, Install Guide, and sample_messy_sales.csv.' },
+        solo: { title: 'Pro Bundle — Solo License ($39)', price: '$39', desc: 'Includes all 6 SKILL.md files, commercial client-project rights, and v1.x updates.' },
+        team: { title: 'Team License — Up to 15 Seats ($149)', price: '$149', desc: 'Company-wide deployment for up to 15 seats plus 4 Claude Cowork scheduled-task templates.' }
+      }[plan];
+
+      const liveUrl = CHECKOUT_URLS[plan];
+      document.getElementById('checkoutTitle').textContent = meta.title;
+      const body = document.getElementById('checkoutBody');
+
+      if (liveUrl) {
+        body.innerHTML = `
+          <p class="text-slate-600">${meta.desc}</p>
+          <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" class="block w-full text-center rounded-xl bg-brand-700 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-800 transition-colors">
+            Continue to Secure Checkout (${meta.price}) →
+          </a>
+        `;
+      } else {
+        body.innerHTML = `
+          <p class="text-slate-600">${meta.desc}</p>
+          <div class="rounded-xl border border-amber-200 bg-amber-50 p-4 text-xs text-amber-900 space-y-1.5">
+            <div class="font-bold">Storefront Preview Mode</div>
+            <p>No live checkout URL is linked for <strong>${plan}</strong> yet. Click <strong>Configure Live Links</strong> below to paste your GitHub or Paddle checkout URL.</p>
+          </div>
+          <div class="flex items-center justify-end gap-2 pt-1">
+            <button type="button" id="openCfgFromCheckout" class="rounded-lg bg-brand-700 px-4 py-2 text-xs font-semibold text-white hover:bg-brand-800">Configure Live Links</button>
+          </div>
+        `;
+        document.getElementById('openCfgFromCheckout').addEventListener('click', () => {
+          closeCheckout();
+          openConfigModal();
+        });
+      }
+
+      checkoutModal.classList.remove('hidden');
+      checkoutModal.classList.add('flex');
+    }
+    function closeCheckout() {
+      checkoutModal.classList.add('hidden');
+      checkoutModal.classList.remove('flex');
+    }
+    document.getElementById('closeCheckoutModal').addEventListener('click', closeCheckout);
+    document.getElementById('navBuyBtn').addEventListener('click', () => openCheckout('solo'));
+    document.getElementById('heroProBtn').addEventListener('click', () => openCheckout('solo'));
+    document.getElementById('heroFreeBtn').addEventListener('click', () => openCheckout('free'));
+    document.querySelectorAll('.plan-cta').forEach(btn => {
+      btn.addEventListener('click', () => openCheckout(btn.dataset.plan));
+    });
+
+    // 4. Owner Link Config Modal
+    const configModal = document.getElementById('configModal');
+    function openConfigModal() {
+      document.getElementById('cfgFree').value = CHECKOUT_URLS.free;
+      document.getElementById('cfgSolo').value = CHECKOUT_URLS.solo;
+      document.getElementById('cfgTeam').value = CHECKOUT_URLS.team;
+      configModal.classList.remove('hidden');
+      configModal.classList.add('flex');
+    }
+    function closeConfigModal() {
+      configModal.classList.add('hidden');
+      configModal.classList.remove('flex');
+    }
+    document.getElementById('ownerConfigBtn').addEventListener('click', openConfigModal);
+    document.getElementById('closeConfigModal').addEventListener('click', closeConfigModal);
+    document.getElementById('cancelConfigBtn').addEventListener('click', closeConfigModal);
+    document.getElementById('configForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      CHECKOUT_URLS.free = document.getElementById('cfgFree').value.trim();
+      CHECKOUT_URLS.solo = document.getElementById('cfgSolo').value.trim();
+      CHECKOUT_URLS.team = document.getElementById('cfgTeam').value.trim();
+      try { localStorage.setItem('datapilot_urls', JSON.stringify(CHECKOUT_URLS)); } catch (err) {}
+      closeConfigModal();
+      showToast('Checkout links saved for this session.');
+    });
+
+    // 5. FAQ Accordion
+    function renderFaqs() {
+      const list = document.getElementById('faqList');
+      list.innerHTML = FAQS.map((f, idx) => `
+        <div>
+          <button type="button" data-faq="${idx}" class="faq-btn flex w-full items-center justify-between px-5 py-4 text-left text-sm sm:text-base font-semibold text-slate-900 hover:bg-slate-50">
+            <span>${f.q}</span>
+            <span class="faq-icon ml-4 text-slate-400 font-mono text-lg leading-none">+</span>
+          </button>
+          <div id="faq-ans-${idx}" class="hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed">${f.a}</div>
+        </div>
+      `).join('');
+
+      list.querySelectorAll('.faq-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const ans = document.getElementById('faq-ans-' + btn.dataset.faq);
+          const icon = btn.querySelector('.faq-icon');
+          const open = !ans.classList.contains('hidden');
+          ans.classList.toggle('hidden', open);
+          icon.textContent = open ? '+' : '−';
+        });
+      });
+    }
+
+    // Init
+    renderDemo();
+    renderSkills();
+    renderFaqs();
+  </script>
+</body>
+</html>

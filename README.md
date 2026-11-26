@@ -18,5 +18,6 @@ Audit and clean any messy CSV or Excel spreadsheet in seconds using Claude Web, 
 ## Need the Full Executive Analyst Suite?
 Upgrade to the **Executive Data & Spreadsheet Analyst — Claude Skills Pack (v1.0)** to add 5 Pro workflows (Executive KPI Deck Builder, Budget-vs-Actual Variance Analyzer, Multi-Sheet Reconciler, Notion + Google Drive MCP Executive Brief Writer, and Client Summary Generator):
 
-👉 **[Get the Full 5-Skill Pro Pack ($39 Solo / $149 Team)](https://968086795490.gumroad.com/l/executive-data-skills)**<img width="1918" height="1026" alt="image" src="https://github.com/user-attachments/assets/330cff5c-ab81-4c6a-b279-174bdb841743" /># csv-excel-auditor-claude-skill
+👉 **[Get the Full 5-Skill Pro Pack ($39 Solo / $149 Team)](https://968086795490.gumroad.com/l/executive-data-skills)**
+
 Listed on [ClaudeMarketplace](https://www.claudemarketplace.net).
